@@ -1,0 +1,181 @@
+/* KubeTUI Application Styles */
+
+/* Main Container */
+#main-container {
+    layout: vertical;
+    height: 1fr;
+    background: $surface;
+}
+
+/* Top Bar */
+#top-bar {
+    layout: horizontal;
+    height: 1;
+    background: $primary;
+    padding: 0 1;
+}
+
+#context-label, #namespace-label {
+    color: $text-on-primary;
+    padding: 0 2;
+    content-align: center middle;
+}
+
+/* Tabs */
+TabbedContent {
+    height: 1fr;
+}
+
+TabPane {
+    padding: 1;
+}
+
+/* Tables */
+DataTable {
+    height: 1fr;
+    background: $surface;
+}
+
+DataTable .datatable--header {
+    background: $primary-darken-2;
+    color: $text-on-primary;
+    text-style: bold;
+}
+
+DataTable .datatable--cursor {
+    background: $primary;
+    color: $text-on-primary;
+}
+
+DataTable .datatable--odd-row {
+    background: $surface-darken-1;
+}
+
+/* Status Bar */
+#status-bar {
+    dock: bottom;
+    height: 1;
+    background: $surface-darken-2;
+    color: $text-muted;
+    padding: 0 1;
+    content-align: left middle;
+}
+
+/* Log Viewer */
+#log-container {
+    layout: vertical;
+    height: 1fr;
+    padding: 1;
+}
+
+#log-title {
+    color: $primary;
+    text-style: bold;
+    padding: 1;
+}
+
+#log-content {
+    height: 1fr;
+    background: $surface-darken-3;
+    color: $text;
+    padding: 1;
+    overflow-y: scroll;
+}
+
+#log-buttons {
+    dock: bottom;
+    height: 3;
+    align: center middle;
+}
+
+/* Namespace/Context Selector */
+#namespace-container, #context-container {
+    layout: vertical;
+    height: 1fr;
+    padding: 1;
+    align: center middle;
+}
+
+#namespace-title, #context-title {
+    color: $primary;
+    text-style: bold;
+    padding: 1;
+    text-align: center;
+}
+
+#namespace-current {
+    color: $text-muted;
+    padding: 1;
+    text-align: center;
+}
+
+#namespace-list, #context-list {
+    height: 1fr;
+    width: 50%;
+    min-width: 30;
+    max-width: 60;
+}
+
+ListView {
+    background: $surface;
+}
+
+ListItem {
+    padding: 1;
+}
+
+ListItem:hover {
+    background: $primary-darken-1;
+}
+
+ListItem.-active {
+    background: $primary;
+    color: $text-on-primary;
+}
+
+/* Buttons */
+Button {
+    margin: 1;
+    min-width: 10;
+}
+
+/* Colors */
+.green {
+    color: $success;
+}
+
+.yellow {
+    color: $warning;
+}
+
+.red {
+    color: $error;
+}
+
+.blue {
+    color: $primary;
+}
+
+.cyan {
+    color: $accent;
+}
+
+.dim {
+    color: $text-muted;
+}
+
+/* Header and Footer */
+Header {
+    background: $primary;
+    color: $text-on-primary;
+}
+
+Footer {
+    background: $surface-darken-2;
+    color: $text-muted;
+}
+
+Footer .footer--key {
+    background: $primary;
+    color: $text-on-primary;
+}

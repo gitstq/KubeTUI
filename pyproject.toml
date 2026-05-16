@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kubetui"
+version = "1.0.0"
+description = "🚀 A modern, fast, and intuitive TUI for Kubernetes cluster management"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "SOLO Agent", email = "solo-agent@github.com"}
+]
+keywords = [
+    "kubernetes",
+    "k8s",
+    "tui",
+    "terminal",
+    "cli",
+    "devops",
+    "monitoring",
+    "cluster-management"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+    "Typing :: Typed"
+]
+dependencies = [
+    "textual>=0.47.0",
+    "rich>=13.7.0",
+    "kubernetes>=29.0.0",
+    "pyyaml>=6.0.1",
+    "pyperclip>=1.8.2"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "mypy>=1.8.0",
+    "ruff>=0.2.0"
+]
+
+[project.scripts]
+kubetui = "kubetui.main:main"
+
+[project.urls]
+Homepage = "https://github.com/solo-agent/kubetui"
+Documentation = "https://github.com/solo-agent/kubetui#readme"
+Repository = "https://github.com/solo-agent/kubetui"
+Issues = "https://github.com/solo-agent/kubetui/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kubetui = ["py.typed", "styles/*.tcss"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
